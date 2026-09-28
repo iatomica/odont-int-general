@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
               <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20 shrink-0">
                 <Image
                   src="/images/logo.webp"
-                  alt="Logo Odontología Dra. Karina Orpianesi"
+                  alt="Logo Odontología Integral General"
                   width={40}
                   height={40}
                   className="w-full h-full object-contain"
