@@ -1,5 +1,5 @@
 # ==========================================
-# Multi-stage Dockerfile for Next.js (AURA Salud)
+# Multi-stage Dockerfile for Next.js (Odontología Integral General)
 # ==========================================
 
 # Stage 1: Install dependencies
