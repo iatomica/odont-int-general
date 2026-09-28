@@ -1,0 +1,3 @@
+# User-agent rules for AURA Salud Demo
+User-agent: *
+Allow: /
