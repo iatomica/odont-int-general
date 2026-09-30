@@ -9,31 +9,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#f8fafc",
+        background: "#FAF8F5",
         surface: {
           DEFAULT: "#ffffff",
-          subtle: "#f1f5f9",
-          muted: "#e2e8f0",
+          subtle: "#F4EFE6",
+          muted: "#E8E2D5",
         },
         charcoal: {
-          DEFAULT: "#0f172a",
-          secondary: "#334155",
-          muted: "#64748b",
-          light: "#94a3b8",
+          DEFAULT: "#2B2621",
+          secondary: "#4A433C",
+          muted: "#766C62",
+          light: "#A4998E",
         },
+        // Premium Taupe & Warm Bronze palette matching JO DENTAL visual identity
         petrol: {
-          50: "#f0f7f8",
-          100: "#dbeef1",
-          200: "#b8dde3",
-          300: "#86c2cd",
-          400: "#4ea1b2",
-          500: "#2d7f91",
-          600: "#1a6373",
-          700: "#0f4c5c", // Primary brand accent
-          800: "#0c3b47",
-          900: "#092d37",
-          950: "#041920",
+          50: "#FAF8F5",
+          100: "#F4EFE6",
+          200: "#E6DDCF",
+          300: "#D3C5B1",
+          400: "#B8A790",
+          500: "#8F7D67",
+          600: "#70614F",
+          700: "#5C5144", // Primary brand logo tone
+          800: "#483E33",
+          900: "#342C24",
+          950: "#1F1A15",
         },
+        gold: {
+          400: "#D6BF8F",
+          500: "#C5AA7A",
+          600: "#B29562",
+        }
       },
       borderRadius: {
         container: "16px",
@@ -53,9 +59,9 @@ const config: Config = {
         ],
       },
       boxShadow: {
-        soft: "0 2px 10px -2px rgba(15, 23, 42, 0.04), 0 1px 4px -1px rgba(15, 23, 42, 0.02)",
-        elevated: "0 10px 25px -4px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(15, 23, 42, 0.03)",
-        modal: "0 20px 40px -10px rgba(15, 23, 42, 0.16), 0 1px 3px 0 rgba(15, 23, 42, 0.05)",
+        soft: "0 2px 10px -2px rgba(43, 38, 33, 0.04), 0 1px 4px -1px rgba(43, 38, 33, 0.02)",
+        elevated: "0 10px 25px -4px rgba(43, 38, 33, 0.07), 0 4px 10px -2px rgba(43, 38, 33, 0.03)",
+        modal: "0 20px 40px -10px rgba(43, 38, 33, 0.18), 0 1px 3px 0 rgba(43, 38, 33, 0.05)",
       },
     },
   },

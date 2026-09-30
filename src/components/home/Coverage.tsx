@@ -1,159 +1,169 @@
 "use client";
 
-import React, { useState } from "react";
-import { OBRAS_SOCIALES } from "@/config/clinic";
+import React from "react";
+import { clinicConfig, PAYMENT_METHODS } from "@/config/clinic";
 import {
   WhatsappLogo,
   CheckCircle,
   CreditCard,
-  FileText,
+  Bank,
+  Money,
   ShieldCheck,
-  MagnifyingGlass,
   ArrowRight,
   Info,
+  MapPin,
+  Clock,
+  Sparkle
 } from "@phosphor-icons/react";
-import { clinicConfig } from "@/config/clinic";
 
 export const Coverage: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedOS, setSelectedOS] = useState<string>("osde");
-
-  const filteredObrasSociales = OBRAS_SOCIALES.filter((os) =>
-    os.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  const currentOS = OBRAS_SOCIALES.find((os) => os.id === selectedOS) || OBRAS_SOCIALES[0];
-
-  const whatsappInquiryUrl = `https://wa.me/${clinicConfig.whatsappClean}?text=${encodeURIComponent(
-    `Hola equipo de Odontología Integral General, quisiera consultar la cobertura y requisitos para atenderme con mi obra social ${currentOS.name}.`
+  const whatsappCoverageUrl = `https://wa.me/${clinicConfig.whatsappClean}?text=${encodeURIComponent(
+    "Hola Dr. Jamil Ortiz (JO DENTAL), quisiera consultar si atienden con mi obra social / prepaga o cómo es la modalidad de reintegro en consultorio."
   )}`;
 
   return (
-    <section id="obras-sociales" className="py-20 bg-background border-b border-surface-muted">
+    <section id="cobertura-pagos" className="py-20 bg-[#FAF8F5] border-b border-[#E8E2D5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center mb-12">
-          <span className="text-xs font-semibold uppercase tracking-wider text-petrol-700 flex items-center justify-center gap-1.5">
-            <ShieldCheck size={16} weight="fill" className="text-petrol-600" />
-            Convenios y Obras Sociales Aceptadas
+        <div className="max-w-2xl mx-auto text-center mb-14">
+          <span className="text-xs font-semibold uppercase tracking-wider text-[#70614F] flex items-center justify-center gap-1.5">
+            <ShieldCheck size={16} weight="fill" className="text-[#C5AA7A]" />
+            Transparencia &amp; Comodidad
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal mt-1">
-            Atendemos las principales obras sociales y prepagas
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#2B2621] mt-1.5">
+            Coberturas, Reintegros &amp; Medios de Pago
           </h2>
-          <p className="text-sm sm:text-base text-charcoal-secondary mt-3">
-            Trabajamos con convenios directos y reintegros ágiles para que puedas acceder a la mejor odontología en Córdoba Capital sin trámites engorrosos.
+          <p className="text-sm sm:text-base text-[#4A433C] mt-3 leading-relaxed">
+            Te ofrecemos claridad y opciones flexibles para que el cuidado de tu sonrisa y armonía facial sea cómodo y sin complicaciones.
           </p>
         </div>
 
-        {/* Interactive Coverage Explorer */}
-        <div className="max-w-4xl mx-auto bg-surface rounded-3xl border border-surface-muted p-6 sm:p-8 shadow-soft">
-          {/* Search Input */}
-          <div className="relative mb-6">
-            <MagnifyingGlass size={18} className="absolute left-4 top-3.5 text-charcoal-muted" />
-            <input
-              type="text"
-              placeholder="Buscá tu obra social o prepaga (ej. OSDE, Swiss Medical, Medifé...)"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-11 pr-4 py-3 rounded-xl border border-surface-muted bg-surface-subtle/50 text-sm text-charcoal focus-visible:ring-2 focus-visible:ring-petrol-600 focus-visible:outline-none transition-all"
-            />
-          </div>
-
-          {/* Obras Sociales Pills Grid */}
-          <div className="flex flex-wrap gap-2.5 mb-8">
-            {filteredObrasSociales.map((os) => {
-              const isSelected = selectedOS === os.id;
-              return (
-                <button
-                  key={os.id}
-                  type="button"
-                  onClick={() => setSelectedOS(os.id)}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-semibold transition-all flex items-center gap-2 ${
-                    isSelected
-                      ? "bg-petrol-800 text-white shadow-sm ring-2 ring-petrol-600/30"
-                      : "bg-surface-subtle text-charcoal-secondary border border-surface-muted hover:border-slate-300 hover:text-charcoal"
-                  }`}
-                >
-                  <span
-                    className="w-2 h-2 rounded-full shrink-0"
-                    style={{ backgroundColor: os.color }}
-                  />
-                  <span>{os.name}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Detailed Selected Coverage Card */}
-          <div className="rounded-2xl bg-surface-subtle/60 border border-slate-200/80 p-6 sm:p-7 space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-surface-muted pb-4">
+        {/* 2 Columns: Coberturas & Medios de Pago */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* Col 1: Obras Sociales & Reintegros Notice */}
+          <div className="lg:col-span-6 bg-white rounded-3xl border border-[#DFD7C7] p-6 sm:p-8 shadow-soft flex flex-col justify-between">
+            <div className="space-y-5">
               <div className="flex items-center gap-3">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-white text-base shadow-sm"
-                  style={{ backgroundColor: currentOS.color }}
-                >
-                  {currentOS.name.slice(0, 2).toUpperCase()}
+                <div className="w-12 h-12 rounded-2xl bg-[#F4EFE6] text-[#5C5144] flex items-center justify-center font-bold text-lg">
+                  <ShieldCheck size={26} weight="fill" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-charcoal">{currentOS.name}</h3>
-                  <span className="text-xs text-emerald-700 font-medium flex items-center gap-1">
-                    <CheckCircle size={14} weight="fill" />
-                    Convenio activo en consultorio
+                  <h3 className="text-xl font-bold text-[#2B2621]">Obras Sociales &amp; Prepagas</h3>
+                  <span className="text-xs font-semibold text-[#8F7D67]">
+                    Atención personalizada &amp; Reintegros
                   </span>
                 </div>
               </div>
 
+              <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5] space-y-2">
+                <div className="flex items-center gap-2 text-xs font-bold text-[#5C5144]">
+                  <Info size={16} weight="fill" />
+                  <span>Consulta de cobertura individual</span>
+                </div>
+                <p className="text-xs text-[#4A433C] leading-relaxed">
+                  Para saber si contamos con atención para tu obra social o plan particular, o para gestionar <strong>factura oficial de reintegro</strong> con tu prepaga, consultanos previamente por WhatsApp indicando tu cobertura.
+                </p>
+              </div>
+
+              <ul className="space-y-2.5 text-xs text-[#4A433C]">
+                <li className="flex items-center gap-2">
+                  <CheckCircle size={15} weight="fill" className="text-emerald-600 shrink-0" />
+                  <span>Emisión de factura para reintegro ante prepagas</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle size={15} weight="fill" className="text-emerald-600 shrink-0" />
+                  <span>Planes de tratamiento transparentes sin costos ocultos</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle size={15} weight="fill" className="text-emerald-600 shrink-0" />
+                  <span>Presupuesto personalizado en tu primera consulta</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="pt-6 mt-6 border-t border-[#F0ECE1]">
               <a
-                href={whatsappInquiryUrl}
+                href={whatsappCoverageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shadow-sm transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm shadow-sm transition-all"
               >
-                <WhatsappLogo size={16} weight="fill" />
-                <span>Validar mi plan por WhatsApp</span>
-                <ArrowRight size={13} />
+                <WhatsappLogo size={18} weight="fill" />
+                <span>Consultar por mi cobertura en WhatsApp</span>
+                <ArrowRight size={14} />
               </a>
             </div>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-              <div className="p-3.5 bg-surface rounded-xl border border-surface-muted">
-                <span className="font-semibold text-charcoal block mb-1">
-                  Atención Primaria & Limpieza
-                </span>
-                <p className="text-charcoal-muted leading-relaxed">
-                  Diagnóstico general, profilaxis ultrasónica, inactivación de caries y radiografías de control.
-                </p>
+          {/* Col 2: Medios de Pago */}
+          <div className="lg:col-span-6 bg-white rounded-3xl border border-[#DFD7C7] p-6 sm:p-8 shadow-soft flex flex-col justify-between">
+            <div className="space-y-5">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-[#F4EFE6] text-[#5C5144] flex items-center justify-center font-bold text-lg">
+                  <CreditCard size={26} weight="fill" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#2B2621]">Medios de Pago Aceptados</h3>
+                  <span className="text-xs font-semibold text-[#8F7D67]">
+                    Opciones flexibles para tu comodidad
+                  </span>
+                </div>
               </div>
 
-              <div className="p-3.5 bg-surface rounded-xl border border-surface-muted">
-                <span className="font-semibold text-charcoal block mb-1">
-                  Especialidades & Complejidad
-                </span>
-                <p className="text-charcoal-muted leading-relaxed">
-                  Endodoncia, periodoncia, ortodoncia e implantes según el plan y módulo contratado en {currentOS.name}.
-                </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5] text-center space-y-1.5">
+                  <div className="w-10 h-10 mx-auto rounded-xl bg-white text-[#5C5144] flex items-center justify-center shadow-2xs">
+                    <Money size={22} weight="fill" />
+                  </div>
+                  <h4 className="text-xs font-bold text-[#2B2621]">Efectivo</h4>
+                  <p className="text-[11px] text-[#766C62]">Abono en consultorio</p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5] text-center space-y-1.5">
+                  <div className="w-10 h-10 mx-auto rounded-xl bg-white text-[#5C5144] flex items-center justify-center shadow-2xs">
+                    <Bank size={22} weight="fill" />
+                  </div>
+                  <h4 className="text-xs font-bold text-[#2B2621]">Transferencia</h4>
+                  <p className="text-[11px] text-[#766C62]">CBU / Alias bancario</p>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-[#FAF8F5] border border-[#E8E2D5] text-center space-y-1.5">
+                  <div className="w-10 h-10 mx-auto rounded-xl bg-white text-[#5C5144] flex items-center justify-center shadow-2xs">
+                    <CreditCard size={22} weight="fill" />
+                  </div>
+                  <h4 className="text-xs font-bold text-[#2B2621]">Tarjetas</h4>
+                  <p className="text-[11px] text-[#766C62]">Débito &amp; Crédito</p>
+                </div>
               </div>
 
-              <div className="p-3.5 bg-surface rounded-xl border border-surface-muted">
-                <span className="font-semibold text-charcoal block mb-1">
-                  ¿Qué documentación traer?
-                </span>
-                <p className="text-charcoal-muted leading-relaxed">
-                  Credencial digital en el celular + DNI. Gestionamos la autorización en recepción para tu comodidad.
+              <div className="p-4 rounded-2xl bg-[#F4EFE6]/70 border border-[#E8E2D5] text-xs text-[#4A433C] space-y-1">
+                <p className="font-semibold text-[#2B2621] flex items-center gap-1.5">
+                  <Sparkle size={14} weight="fill" className="text-[#C5AA7A]" />
+                  Facilidades para tratamientos integrales
+                </p>
+                <p className="text-[#766C62] leading-relaxed">
+                  Para procedimientos como implantes, prótesis dentales o armonización facial, coordinamos planes de pago escalonados acordes a la evolución de tus citas.
                 </p>
               </div>
             </div>
 
-            <div className="pt-2 flex items-center gap-2 text-[11px] text-charcoal-muted">
-              <Info size={14} className="text-petrol-600 shrink-0" />
-              <span>
-                ¿Tenés otra cobertura o consulta particular? También emitimos factura electrónica para reintegros inmediatos.
+            <div className="pt-6 mt-6 border-t border-[#F0ECE1] flex items-center justify-between text-xs text-[#766C62]">
+              <span className="flex items-center gap-1.5">
+                <MapPin size={15} className="text-[#70614F]" />
+                Paraná 851, Recoleta
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock size={15} className="text-[#70614F]" />
+                Lunes a Viernes 09:00 a 19:30 hs
               </span>
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
   );
 };
-

@@ -3,9 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { List, X, Phone, MapPin, InstagramLogo, WhatsappLogo } from "@phosphor-icons/react";
+import { List, X, Phone, MapPin, InstagramLogo, WhatsappLogo, CreditCard } from "@phosphor-icons/react";
 import { clinicConfig } from "@/config/clinic";
-import { Button } from "@/components/ui/Button";
 
 export interface HeaderProps {
   onOpenBooking: (specialtyId?: string, profId?: string) => void;
@@ -43,7 +42,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               className="flex items-center gap-1.5 hover:text-white transition-colors"
             >
               <MapPin size={14} className="text-petrol-300" />
-              <span>{clinicConfig.address}, {clinicConfig.city}</span>
+              <span>{clinicConfig.address}, {clinicConfig.neighborhood}</span>
             </a>
             <a
               href={`tel:${clinicConfig.phone}`}
@@ -71,31 +70,20 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           isScrolled ? "shadow-soft border-b border-surface-muted" : "border-b border-slate-100"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
           {/* Brand Logo & Name */}
-          <Link href="/" className="flex items-center gap-3 group focus-visible:outline-none">
-            <div className="relative w-11 h-11 rounded-xl overflow-hidden bg-petrol-50 p-1 border border-petrol-100 group-hover:scale-105 transition-transform shrink-0">
-              <Image
-                src="/images/logo.webp"
-                alt="Logo Odontología Integral General"
-                width={44}
-                height={44}
-                className="w-full h-full object-contain"
-                priority
+          <Link href="/" className="flex items-center gap-3 group focus-visible:outline-none shrink-0">
+            <div className="relative h-12 w-auto flex items-center">
+              <img
+                src="/images/logo-horizontal.svg"
+                alt="Logo JO DENTAL - Dr. Jamil Ortiz"
+                className="h-11 w-auto object-contain transition-transform group-hover:scale-102"
               />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-base sm:text-lg font-bold tracking-tight text-charcoal group-hover:text-petrol-700 transition-colors leading-tight">
-                {clinicConfig.shortName}
-              </span>
-              <span className="text-[11px] font-medium text-petrol-700 tracking-tight">
-                {clinicConfig.tagline}
-              </span>
             </div>
           </Link>
 
           {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-charcoal-secondary">
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-charcoal-secondary">
             <Link
               href="#especialidades"
               className="hover:text-petrol-700 transition-colors focus-visible:outline-none"
@@ -103,28 +91,28 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
               Especialidades
             </Link>
             <Link
-              href="#obras-sociales"
-              className="hover:text-petrol-700 transition-colors focus-visible:outline-none"
+              href="#armonizacion-facial"
+              className="hover:text-petrol-700 transition-colors focus-visible:outline-none font-semibold text-petrol-800"
             >
-              Obras Sociales
+              Armonización Facial
             </Link>
             <Link
-              href="#equipo"
+              href="#dr-jamil-ortiz"
               className="hover:text-petrol-700 transition-colors focus-visible:outline-none"
             >
-              Profesionales
+              Dr. Jamil Ortiz
             </Link>
             <Link
-              href="#tecnologia"
+              href="#cobertura-pagos"
               className="hover:text-petrol-700 transition-colors focus-visible:outline-none"
             >
-              Enfoque Digital
+              Coberturas & Pagos
             </Link>
             <Link
               href="#ubicacion"
               className="hover:text-petrol-700 transition-colors focus-visible:outline-none"
             >
-              Ubicación
+              Recoleta (Paraná 851)
             </Link>
             <Link
               href="#faq"
@@ -135,12 +123,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
           </nav>
 
           {/* Right Action: Direct WhatsApp */}
-          <div className="hidden sm:flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-3 shrink-0">
             <a
               href={clinicConfig.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm shadow-sm transition-all hover:shadow-md"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm shadow-sm transition-all hover:shadow-md cursor-pointer"
             >
               <WhatsappLogo size={18} weight="fill" />
               <span>Turnos WhatsApp</span>
@@ -178,35 +166,35 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 border-b border-surface-muted"
               >
-                Especialidades
+                Especialidades Odontológicas
               </Link>
               <Link
-                href="#obras-sociales"
+                href="#armonizacion-facial"
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-2 border-b border-surface-muted font-bold text-petrol-800"
+              >
+                Armonización Facial
+              </Link>
+              <Link
+                href="#dr-jamil-ortiz"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 border-b border-surface-muted"
               >
-                Obras Sociales
+                Dr. Jamil Ortiz
               </Link>
               <Link
-                href="#equipo"
+                href="#cobertura-pagos"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 border-b border-surface-muted"
               >
-                Equipo de Profesionales
-              </Link>
-              <Link
-                href="#tecnologia"
-                onClick={() => setMobileMenuOpen(false)}
-                className="py-2 border-b border-surface-muted"
-              >
-                Enfoque Digital & Laboratorio
+                Coberturas & Medios de Pago
               </Link>
               <Link
                 href="#ubicacion"
                 onClick={() => setMobileMenuOpen(false)}
                 className="py-2 border-b border-surface-muted"
               >
-                Ubicación & Contacto
+                Ubicación (Paraná 851, Recoleta)
               </Link>
               <Link
                 href="#faq"
@@ -225,7 +213,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
                 className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-sm"
               >
                 <WhatsappLogo size={20} weight="fill" />
-                <span>Pedir Turno por WhatsApp</span>
+                <span>Pedir Turno por WhatsApp ({clinicConfig.phoneDisplay})</span>
               </a>
 
               <button
@@ -245,4 +233,3 @@ export const Header: React.FC<HeaderProps> = ({ onOpenBooking }) => {
     </>
   );
 };
-

@@ -9,37 +9,29 @@ import {
   InstagramLogo,
   WhatsappLogo,
   ShieldCheck,
+  CreditCard,
+  Sparkle
 } from "@phosphor-icons/react";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#051c20] text-slate-300 pt-16 pb-12 border-t border-teal-950">
+    <footer className="bg-[#1C1713] text-[#D3C5B1] pt-16 pb-12 border-t border-[#342C24]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-teal-900/40">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-[#342C24]">
           {/* Column 1 & 2: Brand info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="relative w-10 h-10 rounded-xl overflow-hidden bg-white/10 p-1 border border-white/20 shrink-0">
-                <Image
-                  src="/images/logo.webp"
-                  alt="Logo Odontología Integral General"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-contain"
+              <div className="relative h-12 w-auto shrink-0 bg-white/5 p-1 rounded-xl border border-white/10">
+                <img
+                  src="/images/logo-horizontal.svg"
+                  alt="Logo JO DENTAL - Dr. Jamil Ortiz"
+                  className="h-10 w-auto object-contain brightness-125"
                 />
-              </div>
-              <div>
-                <span className="text-base sm:text-lg font-bold tracking-tight text-white block leading-tight">
-                  {clinicConfig.shortName}
-                </span>
-                <span className="text-xs text-cyan-300 font-medium">
-                  {clinicConfig.tagline}
-                </span>
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-              Consultorio odontológico multidisciplinario en Córdoba Capital. Diagnóstico digital con escáner 3D, laboratorio propio y atención personalizada por especialistas.
+            <p className="text-xs sm:text-sm text-[#A4998E] leading-relaxed max-w-sm">
+              Consultorio odontológico boutique y centro de armonización facial en Recoleta, Buenos Aires. Más de 8 especialidades dedicadas a la salud, función y belleza natural de tu sonrisa.
             </p>
 
             <div className="flex items-center gap-3 pt-1">
@@ -63,56 +55,61 @@ export const Footer: React.FC = () => {
               </a>
             </div>
 
-            <div className="p-3 bg-teal-950/60 rounded-xl border border-teal-800/40 text-[11px] text-slate-300 space-y-1">
-              <div className="font-semibold text-cyan-200 flex items-center gap-1.5">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10 text-[11px] text-[#D3C5B1] space-y-1">
+              <div className="font-semibold text-[#EADBBE] flex items-center gap-1.5">
                 <ShieldCheck size={14} className="text-emerald-400" />
-                <span>Matrículas Profesionales del Equipo</span>
+                <span>Dr. Jamil Ortiz · Dirección Médica</span>
               </div>
-              <p className="text-slate-400 text-[10px] leading-tight">
-                Dra. Karina Orpianesi MP 8489 · Dra. Romina Guzmán MP 8631 · Dra. Danae Gomez MP 11251 · Dr. Alejandro Moyano MP 6595
+              <p className="text-[#A4998E] text-[10px] leading-tight">
+                Odontología Integral, Prótesis, Implantes, Estética y Armonización Orofacial en Recoleta.
               </p>
             </div>
           </div>
 
           {/* Column 3: Specialties */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-100">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-white">
               Especialidades
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-[#A4998E]">
               <li>
                 <Link href="#especialidades" className="hover:text-white transition-colors">
-                  Escaneo 3D & Diagnóstico
+                  Prótesis Dentales
                 </Link>
               </li>
               <li>
                 <Link href="#especialidades" className="hover:text-white transition-colors">
-                  Endodoncia Mecanizada
+                  Armonización Facial
                 </Link>
               </li>
               <li>
                 <Link href="#especialidades" className="hover:text-white transition-colors">
-                  Implantología & Cirugía
+                  Implantes Dentales
                 </Link>
               </li>
               <li>
                 <Link href="#especialidades" className="hover:text-white transition-colors">
-                  Ortodoncia & Ortopedia
+                  Operatoria &amp; Estética
                 </Link>
               </li>
               <li>
                 <Link href="#especialidades" className="hover:text-white transition-colors">
-                  Odontopediatría (Niños)
+                  Endodoncia
                 </Link>
               </li>
               <li>
                 <Link href="#especialidades" className="hover:text-white transition-colors">
-                  Estética & Prótesis Dental
+                  Ortodoncia
                 </Link>
               </li>
               <li>
                 <Link href="#especialidades" className="hover:text-white transition-colors">
-                  Bruxismo & ATM
+                  Periodoncia
+                </Link>
+              </li>
+              <li>
+                <Link href="#especialidades" className="hover:text-white transition-colors">
+                  Odontopediatría
                 </Link>
               </li>
             </ul>
@@ -120,23 +117,23 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Links */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-100">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-white">
               Información Pacientes
             </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-400">
+            <ul className="space-y-2 text-xs sm:text-sm text-[#A4998E]">
               <li>
-                <Link href="#obras-sociales" className="hover:text-white transition-colors">
-                  14+ Obras Sociales
+                <Link href="#dr-jamil-ortiz" className="hover:text-white transition-colors">
+                  Dr. Jamil Ortiz
                 </Link>
               </li>
               <li>
-                <Link href="#equipo" className="hover:text-white transition-colors">
-                  Cuerpo Profesional
+                <Link href="#cobertura-pagos" className="hover:text-white transition-colors">
+                  Coberturas &amp; Reintegros
                 </Link>
               </li>
               <li>
-                <Link href="#tecnologia" className="hover:text-white transition-colors">
-                  Laboratorio en Gabinete
+                <Link href="#cobertura-pagos" className="hover:text-white transition-colors">
+                  Medios de Pago Aceptados
                 </Link>
               </li>
               <li>
@@ -165,35 +162,30 @@ export const Footer: React.FC = () => {
 
           {/* Column 5: Contact & Location */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-100">
-              Ubicación & Contacto
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-white">
+              Ubicación &amp; Contacto
             </h4>
-            <div className="space-y-2.5 text-xs text-slate-400">
+            <div className="space-y-2.5 text-xs text-[#A4998E]">
               <a
                 href={clinicConfig.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-2 hover:text-white transition-colors"
               >
-                <MapPin size={16} className="text-cyan-400 shrink-0 mt-0.5" />
-                <span>David Luque 90, B° General Paz, Córdoba</span>
+                <MapPin size={16} className="text-[#C5AA7A] shrink-0 mt-0.5" />
+                <span>Paraná 851, Recoleta, CABA</span>
               </a>
               <a
                 href={`tel:${clinicConfig.phone}`}
                 className="flex items-center gap-2 hover:text-white transition-colors"
               >
-                <Phone size={16} className="text-cyan-400 shrink-0" />
-                <span>{clinicConfig.phoneDisplay}</span>
+                <Phone size={16} className="text-[#C5AA7A] shrink-0" />
+                <span>WhatsApp: {clinicConfig.phoneDisplay}</span>
               </a>
-              <a
-                href={clinicConfig.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
-              >
-                <WhatsappLogo size={16} weight="fill" className="shrink-0" />
-                <span>+54 9 351 317-0792</span>
-              </a>
+              <div className="flex items-center gap-2 text-[#EADBBE]">
+                <CreditCard size={16} className="text-[#C5AA7A] shrink-0" />
+                <span>Efectivo, Transf. y Tarjeta</span>
+              </div>
               <a
                 href={clinicConfig.instagram}
                 target="_blank"
@@ -203,7 +195,7 @@ export const Footer: React.FC = () => {
                 <InstagramLogo size={16} className="text-pink-400 shrink-0" />
                 <span>{clinicConfig.instagramHandle}</span>
               </a>
-              <div className="flex items-start gap-2 pt-1 border-t border-teal-900/40">
+              <div className="flex items-start gap-2 pt-1 border-t border-white/10">
                 <Clock size={16} className="text-slate-400 shrink-0 mt-0.5" />
                 <span>{clinicConfig.hours}</span>
               </div>
@@ -212,16 +204,15 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#766C62] gap-4">
           <p>© 2026 {clinicConfig.name}. Todos los derechos reservados.</p>
           <div className="flex items-center gap-4 text-[11px]">
-            <span>David Luque 90, Córdoba Capital</span>
+            <span>Paraná 851, Recoleta, Buenos Aires</span>
             <span>·</span>
-            <span>Odontología Integral con Enfoque Digital</span>
+            <span>Odontología Integral &amp; Armonización Facial</span>
           </div>
         </div>
       </div>
     </footer>
   );
 };
-

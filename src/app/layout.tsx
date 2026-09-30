@@ -4,10 +4,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: `${clinicConfig.name} · ${clinicConfig.tagline}`,
-  description: `${clinicConfig.descriptor}. Diagnóstico 3D con escáner intraoral, laboratorio propio, endodoncia, ortodoncia, implantes y 14+ obras sociales en David Luque 90, Córdoba Capital.`,
+  description: `${clinicConfig.descriptor}. Prótesis dentales, endodoncia, implantes, estética dental y armonización facial en Paraná 851, Recoleta, Buenos Aires. WhatsApp: ${clinicConfig.phoneDisplay}.`,
   openGraph: {
-    title: `${clinicConfig.name} · Odontología Integral con Enfoque Digital`,
-    description: "Consultorio odontológico en Córdoba Capital. Endodoncia, ortodoncia, escaneo 3D y convenios con más de 14 obras sociales.",
+    title: `${clinicConfig.name} · Odontología & Armonización Facial`,
+    description: "Consultorio odontológico y estética orofacial en Recoleta, Buenos Aires. Dr. Jamil Ortiz. Atención exclusiva con turno previo.",
     locale: "es_AR",
     type: "website",
   },
@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
       </head>
       <body className="min-h-[100dvh] flex flex-col bg-background text-charcoal">
         {children}
