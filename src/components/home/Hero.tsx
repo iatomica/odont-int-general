@@ -139,10 +139,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               <div className="relative rounded-[22px] overflow-hidden bg-[#2D2620] h-[360px] sm:h-[420px]">
                 {/* Modern High-Tech Clinic Banner Image */}
                 <Image
-                  src="/images/hero_dental_banner.webp"
-                  alt="JO DENTAL - Odontología & Armonización Facial Dr. Jamil Ortiz en Recoleta"
+                  src="/images/dr_jamil_ortiz_hd.jpg"
+                  alt="Dr. Jamil Ortiz en su consultorio de Recoleta - JO DENTAL"
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-700 ease-out"
                   priority
                 />
 
