@@ -30,7 +30,7 @@ export const PROFESSIONALS: Professional[] = [
       "Endodoncia"
     ],
     bio: "Director de JO DENTAL. Especialista en rehabilitación estética, prótesis y armonización orofacial en Recoleta. Brinda una atención meticulosa y personalizada con un enfoque multidisciplinario orientado a la belleza y salud integral.",
-    image: "/images/dr_jamil_ortiz.webp",
+    image: "/images/dr_jamil_ortiz.png",
     badge: "Director Médico",
     isDirector: true,
   },

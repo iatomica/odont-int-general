@@ -49,7 +49,7 @@ export const Professionals: React.FC<ProfessionalsProps> = ({ onSelectProfession
             <div className="relative rounded-3xl overflow-hidden bg-white border border-[#DFD7C7] shadow-elevated group">
               <div className="relative h-[440px] sm:h-[480px] w-full bg-[#3E362F]">
                 <Image
-                  src="/images/dr_jamil_ortiz.webp"
+                  src="/images/dr_jamil_ortiz.png"
                   alt="Dr. Jamil Ortiz - JO DENTAL Recoleta"
                   fill
                   className="object-cover object-top group-hover:scale-103 transition-transform duration-700 ease-out"
